@@ -7,10 +7,13 @@
   <title>Recibir Datos desde la Web</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
-  <link rel="stylesheet" href="styles.css" />
+    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
+ 
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script> 
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
@@ -107,8 +110,7 @@
             </div>
 
             <div class="modal-footer">
-              <input type="submit" name="submitImg" class="btn btn-primary" data-bs-dismiss="modal"
-                value="Cargar Img" />
+              <button type="button" class="btn btn-primary" id="submitImg" data-bs-dismiss="modal">Cargar</button>
 
             </div>
           </div>
@@ -149,13 +151,44 @@
 
   <script>
 
-    document.getElementById('show-upload-form').addEventListener('click', function () {
+    document.getElementById('submitImg').addEventListener('click', function () {
       var uploadForm = document.querySelector('.upload-form');
       if (uploadForm.style.display === 'none' || uploadForm.style.display === '') {
         uploadForm.style.display = 'block';
+
+        document.getElementById('image').value='';
       } else {
         uploadForm.style.display = 'none';
       }
+
+      fetch('/upload', {
+    method: 'POST',
+    body: new FormData(uploadForm),
+  })
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        Swal.fire({
+          title: "Éxito",
+          text: "La imagen se ha cargado correctamente",
+          icon: "success",
+        });
+      } else {
+        Swal.fire({
+          title: "Error",
+          text: "Hubo un problema al cargar la imagen",
+          icon: "error",
+        });
+      }
+    })
+    .catch(error => {
+      console.error('Error al cargar la imagen:', error);
+      Swal.fire({
+        title: "Error",
+        text: "Hubo un problema al cargar la imagen",
+        icon: "error",
+      });
+    });
     });
 
 
@@ -189,20 +222,23 @@
     //const form = document.querySelector('form');
     //const mensajeEnviado = document.getElementById('mensaje-enviado');
     document.addEventListener('DOMContentLoaded', function () {
-
-
-
       const form = document.querySelector('form');
       const mensajeEnviado = document.getElementById('mensaje-enviado');
       // Al enviar el formulario
       //form.addEventListener('submit', (event) => {
       document.getElementById('submitButton').addEventListener('click', function () {
         //event.preventDefault(); // Evitar que se envíe el formulario de inmediato
+
+
+
+
         const numbersValue = document.getElementById('numbers').value;
         const messagesValue = document.getElementById('messages').value;
+
         // Convertir los valores en arrays separados por comas sin agregar comillas
         const numbersArray = numbersValue.split(',').map(number => number.trim());
         const messagesArray = messagesValue.split(',').map(message => message.trim());
+
         // Enviar los datos al servidor
         fetch('/procesar', {
           method: 'POST',
