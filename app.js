@@ -261,7 +261,7 @@ const upload = multer({
     // Verifica si el archivo ya existe en "media" y lo elimina si es necesario
     const filePath = path.join('media', 'image' + path.extname(file.originalname));
     if (fs.existsSync(filePath)) {
-      fs.unlinkSync(filePath);
+      fs.unlinkSync(filePath);       
     }
     cb(null, true);
   },
