@@ -18,7 +18,7 @@ body {
 .contact-image img {
   border-radius: 50%;
   width: 11%;
-  margin-top: -4%;
+  margin-top: -6%;
 }
 .contact-form form {
   padding: 9%;
@@ -56,10 +56,6 @@ body {
   margin: 10px; /* Añade un margen para evitar la superposición con la cabecera */
 }
 /* Estilos para la visualización */
-h1 {
-  text-align: center;
-}
-
 form {
   display: flex;
   flex-direction: column;
