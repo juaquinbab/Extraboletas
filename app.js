@@ -269,24 +269,14 @@ const upload = multer({
 
 app.post('/upload', upload.single('image'), (req, res) => {
   // Mostrar un mensaje emergente en HTML
-  if (req.file) {
-    Swal.fire({
-      title: "Éxito",
-      text: "La imagen se ha cargado correctamente",
-      icon: "success",
-    });
-    res.redirect('/');
-  } else {
-    Swal.fire({
-      title: "Error",
-      text: "Hubo un problema al cargar la imagen",
-      icon: "error",
-    });
-    res.redirect('/');
-  }
-
-});
-
+  
+    // Mostrar un mensaje emergente en HTML
+    if (req.file) {
+      res.json({ success: true });
+    } else {
+      res.json({ success: false });
+    }
+  });
 
 // 
 
