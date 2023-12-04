@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedidos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script> 
+  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"></script>
+    <script src="ajax2.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  
+    <nav class="navbar navbar-expand-lg bg-body-tertiary bg-opacity-10">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="/Public/logo.webp" alt="Bootstrap" width="30" height="24">
+        </a>
+        <span class="navbar-brand mb-0 h1 fw-bold badge text-bg-primary text-bg-primary p-3">Plataforma</span>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/public/index.html">Mensajes masivos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/public/pedidos.html">Pedidos</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Asistente
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="https://wa.link/ljxoq3" target="__blank">Soporte</a></li>
+                <li><a class="dropdown-item" href="https://www.creativocode.com/" target="_blank">Acerca de nosotros </a>
+                </li>
+              </ul>
+  
+            </li>
+          </ul>
+        </div>
+      </div>
+  
+    </nav>
+
+    <div class="container">
+        <div class="mt-5">
+            <button class="btn" id="btnpedido"> Ver pedidos</button>
+          <table class="table mt-2 table-bordered table-striped" id="tablaPedidos">
+              <thead>
+                  <tr class="text-center">
+                      <th scope="col" >Orden</th>
+                      <th scope="col" >Celular</th>
+                      <th scope="col" >Nombre</th>
+                      <th scope="col" >Pedido</th>
+                      <th scope="col" >Dirección</th>
+                      <th scope="col" >Pago</th>
+                      <th scope="col" >Acción</th>
+                  </tr>
+              </thead>
+              <tbody id="contenido">
+                  
+              </tbody>
+          </table>
+      </div>
+    </div>
+    <script>
+        var contenido = document.querySelector('#contenido')
+
+        function traer() {
+            fetch('tabla.json')
+                .then(res => res.json())
+                .then(datos => {
+                    // console.log(datos)
+                    tabla(datos)
+                })
+        }
+
+        function tabla(datos) {
+            // console.log(datos)
+            contenido.innerHTML = ''
+            for(let valor of datos){
+                // console.log(valor.nombre)
+                contenido.innerHTML += `
+                
+                <tr>
+                    <th scope="row">${ valor.id }</th>
+                    <td>${ valor.celular }</td>
+                    <td>${ valor.nombre}</td>
+                    <td>${ valor.pedido }</td>
+                    <td>${ valor.direccion}</td>
+                    <td>${ valor.pago}</td>
+                    <td class="text-center"><a class="btnEditar btn btn-primary">Editar</a><a class="btnBorrar btn btn-danger">Borrar</a></td>
+                </tr>
+                `
+            }
+        }
+    </script>
+</body>
+</html>
