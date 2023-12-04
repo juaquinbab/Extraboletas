@@ -160,10 +160,11 @@
       }
     });
     document.getElementById('submitImg').addEventListener('click', function () {
-  var uploadForm = document.querySelector('.upload-form');
-  var formData = new FormData(uploadForm);
+      var uploadForm = document.querySelector('.upload-form');
+      var formData = new FormData(uploadForm);
 
       fetch('/upload', {
+<<<<<<< HEAD
     method: 'POST',
     body: formData,
   })
@@ -191,8 +192,21 @@
         title: "Error",
         text: "Hubo un problema al cargar la imagen",
         icon: "error",
+=======
+        method: 'POST',
+        body: formData,
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          var modal = new bootstrap.Modal(document.getElementById('uploadModal'));
+          modal.hide();
+        } 
+      })
+      .catch(error => {
+        console.error('Error al cargar la imagen:', error);
+>>>>>>> dd979371446108202d28a9bbd2a51dadff6d04a1
       });
-    });
     });
 
 
