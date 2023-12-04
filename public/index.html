@@ -107,20 +107,9 @@
               <form action="/upload" method="post" enctype="multipart/form-data" class="upload-form">
                 <label for="image">Selecciona una imagen:</label>
                 <input type="file" name="image" id="image" />
-<<<<<<< HEAD
-                <input type="submit" class="btn btn-primary" id="submitImg" data-bs-dismiss="modal" value="cargar">
-              </form>
-            </div>
-
-            <!--<div class="modal-footer">
-              
-
-            </div>-->
-=======
                 <input type="submit" class="btn btn-primary" data-bs-dismiss="modal" value="cargar">
               </form>
             </div>
->>>>>>> 90907ca3e928aa23bc0448d1b44d6e3bb3fc4980
           </div>
         </div>
       </div>
@@ -176,7 +165,7 @@
 
       fetch('/upload', {
     method: 'POST',
-    body: new FormData(uploadForm),
+    body: formData,
   })
     .then(response => response.json())
     .then(data => {
@@ -186,6 +175,8 @@
           text: "La imagen se ha cargado correctamente",
           icon: "success",
         });
+        var modal = new bootstrap.Modal(document.getElementById('uploadModal'));
+        modal.hide();
       } else {
         Swal.fire({
           title: "Error",
