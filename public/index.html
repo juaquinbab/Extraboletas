@@ -164,35 +164,6 @@
       var formData = new FormData(uploadForm);
 
       fetch('/upload', {
-<<<<<<< HEAD
-    method: 'POST',
-    body: formData,
-  })
-    .then(response => response.json())
-    .then(data => {
-      if (data.success) {
-        Swal.fire({
-          title: "Éxito",
-          text: "La imagen se ha cargado correctamente",
-          icon: "success",
-        });
-        var modal = new bootstrap.Modal(document.getElementById('uploadModal'));
-        modal.hide();
-      } else {
-        Swal.fire({
-          title: "Error",
-          text: "Hubo un problema al cargar la imagen",
-          icon: "error",
-        });
-      }
-    })
-    .catch(error => {
-      console.error('Error al cargar la imagen:', error);
-      Swal.fire({
-        title: "Error",
-        text: "Hubo un problema al cargar la imagen",
-        icon: "error",
-=======
         method: 'POST',
         body: formData,
       })
@@ -205,7 +176,6 @@
       })
       .catch(error => {
         console.error('Error al cargar la imagen:', error);
->>>>>>> dd979371446108202d28a9bbd2a51dadff6d04a1
       });
     });
 
