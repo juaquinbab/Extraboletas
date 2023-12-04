@@ -14,6 +14,9 @@ const app = express();
 app.use(express.static(__dirname + '/public'));
 
 
+app.use(express.static(__dirname + '/public'));
+
+
 const port = process.env.PORT;
 
 
@@ -208,7 +211,6 @@ switch (registro[message.from].etapa) {
 
   // Desde aqui inica el cargue de la imagen al servidor 
 
-<<<<<<< HEAD
   // Configura multer para guardar las imágenes en la carpeta "media"
   const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -220,52 +222,6 @@ switch (registro[message.from].etapa) {
       const filename = 'image' + extname;
       cb(null, filename);
     },
-=======
-// Configura multer para guardar las imágenes en la carpeta "media"
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, 'media'); // Directorio de destino para las imágenes
-  },
-  filename: (req, file, cb) => {
-    // Define el nombre del archivo como "image" y asegúrate de que sea único
-    const extname = path.extname(file.originalname);
-    const filename = 'image' + extname;
-    cb(null, filename);
-  },
-});
-
-const upload = multer({
-  storage: storage,
-  fileFilter: (req, file, cb) => {
-    // Verifica si el archivo ya existe en "media" y lo elimina si es necesario
-    const filePath = path.join('media', 'image' + path.extname(file.originalname));
-    if (fs.existsSync(filePath)) {
-      fs.unlinkSync(filePath);
-    }
-    cb(null, true);
-  },
-});
-
-app.post('/upload', upload.single('image'), (req, res) => {
-  // Mostrar un mensaje emergente en HTML
-  
-    // Mostrar un mensaje emergente en HTML
-    if (req.file) {
-      Swal.fire({
-        title: "Éxito",
-        text: "La imagen se ha cargado correctamente",
-        icon: "success",
-      });
-      res.redirect('/');
-    } else {
-      Swal.fire({
-        title: "Error",
-        text: "Hubo un problema al cargar la imagen",
-        icon: "error",
-      });
-      res.redirect('/');
-    }
->>>>>>> dd979371446108202d28a9bbd2a51dadff6d04a1
   });
 
   const upload = multer({
