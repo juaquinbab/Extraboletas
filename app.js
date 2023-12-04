@@ -272,9 +272,19 @@ app.post('/upload', upload.single('image'), (req, res) => {
   
     // Mostrar un mensaje emergente en HTML
     if (req.file) {
-      res.json({ success: true });
+      Swal.fire({
+        title: "Éxito",
+        text: "La imagen se ha cargado correctamente",
+        icon: "success",
+      });
+      res.redirect('/');
     } else {
-      res.json({ success: false });
+      Swal.fire({
+        title: "Error",
+        text: "Hubo un problema al cargar la imagen",
+        icon: "error",
+      });
+      res.redirect('/');
     }
   });
 
