@@ -165,7 +165,7 @@
 
       fetch('/upload', {
     method: 'POST',
-    body: new FormData(uploadForm),
+    body: formData,
   })
     .then(response => response.json())
     .then(data => {
@@ -175,6 +175,8 @@
           text: "La imagen se ha cargado correctamente",
           icon: "success",
         });
+        var modal = new bootstrap.Modal(document.getElementById('uploadModal'));
+        modal.hide();
       } else {
         Swal.fire({
           title: "Error",
