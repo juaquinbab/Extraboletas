@@ -11,10 +11,10 @@ const Swal = require('sweetalert2');
 const app = express();
 
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/Public'));
 
 
-app.use(express.static(__dirname + '/public'));
+
 
 
 const port = process.env.PORT;
@@ -78,7 +78,7 @@ client.on('message', async (message) => {
 
 // Este codigo verifica que ya se envio el mensaje de bienvenida
 if (!registro[message.from]) { 
-  client.sendMessage(message.from, 'Hola soy Marco Polo, tu asistente virtual cheque regalo \n \n Marque el número de la opción que necesita. \n \n 1️⃣ Eres afiliado \n \n 2️⃣ Deseas afiliarte \n \n 3️⃣Activar plan');
+  client.sendMessage(message.from, 'Hola soy CreativoCode');
 
   registro[message.from] = { etapa: 0, numeroDocumento: '' };
   // registro[message.from] = true; // Register the phone number
