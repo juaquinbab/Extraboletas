@@ -289,6 +289,8 @@ switch (registro[message.from].etapa) {
   //  });
   
 
+
+
   app.post('/procesar', (req, res) => {
     const { numbers, messages } = req.body;
 
@@ -304,6 +306,8 @@ switch (registro[message.from].etapa) {
       res.status(400).send('Los datos enviados no son válidos.');
       return;
     }
+
+  
 
 
     const sendMedia = (to, file) => {
@@ -334,7 +338,6 @@ switch (registro[message.from].etapa) {
     
     app.use(express.json());
 
-  // ///////////////////////////////////////////////////////////////
 
 
   numbers.forEach((phoneNumber, index) => {
