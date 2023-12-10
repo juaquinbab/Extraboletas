@@ -217,12 +217,12 @@
     //const form = document.querySelector('form');
     //const mensajeEnviado = document.getElementById('mensaje-enviado');
     document.addEventListener('DOMContentLoaded', function () {
-      const form = document.querySelector('form');
+      // const form = document.querySelector('form');
       const mensajeEnviado = document.getElementById('mensaje-enviado');
       // Al enviar el formulario
       //form.addEventListener('submit', (event) => {
       document.getElementById('submitButton').addEventListener('click', function () {
-        //event.preventDefault(); // Evitar que se envíe el formulario de inmediato
+        event.preventDefault(); // Evitar que se envíe el formulario de inmediato
 
 
 
