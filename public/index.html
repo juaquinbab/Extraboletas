@@ -120,7 +120,7 @@
         <div class="col-md-6">
           <div class="form-floating mb-2" >
             <input type="text" class="form-control" id="numbers" value="" style="height: 100px" />
-            <label for="numbers">Números de telefono separados por coma</label>
+            <label for="floatingInputGrid">Números de telefono separados por coma</label>
             <!--<label for="numbers">Números de Teléfono:</label>
             <input type="text" name="numbers" id="numbers" placeholder="Ingrese los números de teléfono separados por comas">
             -->
@@ -130,7 +130,7 @@
         <div class="col-md-6">
           <div class="form-floating mb-2">
           <textarea name="messages" id="messages" class="form-control" style=" height: 100px"></textarea>
-            <label for="messages">Mensajes separados por comas</label>
+          <label for="floatingInputGrid">Mensajes separados por comas</label>
             <!--<label for="messages">Mensajes:</label>
             <input type="text" name="messages" id="messages" placeholder="Ingrese los mensajes separados por comas">
           -->
@@ -221,8 +221,8 @@
       const mensajeEnviado = document.getElementById('mensaje-enviado');
       // Al enviar el formulario
       //form.addEventListener('submit', (event) => {
-      form.getElementById('submitButton').addEventListener('click', function () {
-        event.preventDefault(); // Evitar que se envíe el formulario de inmediato
+      document.getElementById('submitButton').addEventListener('click', function () {
+        //event.preventDefault(); // Evitar que se envíe el formulario de inmediato
 
 
 
