@@ -25,7 +25,7 @@
   <nav class="navbar navbar-expand-lg bg-body-tertiary bg-opacity-25">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
-        <img src="/Public/logo.webp" alt="Bootstrap" width="30" height="24">
+        <img src="/public/logo.webp" alt="Bootstrap" width="30" height="24">
       </a>
       <span class="navbar-brand mb-0 h1 fw-bold badge text-bg-primary p-4">Plataforma</span>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -119,15 +119,21 @@
       <div class="row g-4 align-items-center">
         <div class="col-md-6">
           <div class="form-floating mb-2" >
-            <input type="text" name="numbers" id="numbers"  class="form-control" value="" style="height: 100px" />
-            <label for="numbers">Números de telefono separados por coma</label>
+           <!-- <input type="text" name="numbers" id="numbers"  class="form-control" value="" style="height: 100px" />
+            <label for="numbers">Números de telefono separados por coma</label>-->
+            <label for="numbers">Números de Teléfono:</label>
+            <input type="text" name="numbers" id="numbers" placeholder="Ingrese los números de teléfono separados por comas">
+        
           </div>
         </div>
 
         <div class="col-md-6">
           <div class="form-floating mb-2">
-            <input type="text" name="messages" id="messages" class="form-control" style=" height: 100px"></input>
-            <label for="messages">Mensajes separados por comas</label>
+          <!--  <input type="text" name="messages" id="messages" class="form-control" style=" height: 100px"></input>
+            <label for="messages">Mensajes separados por comas</label>-->
+            <label for="messages">Mensajes:</label>
+            <input type="text" name="messages" id="messages" placeholder="Ingrese los mensajes separados por comas">
+        
           </div>
         </div>
         <div class="row align-items-center">
