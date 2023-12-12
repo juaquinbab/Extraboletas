@@ -238,20 +238,21 @@ switch (registro[message.from].etapa) {
 
   app.post('/upload', upload.single('image'), (req, res) => {
     // Mostrar un mensaje emergente en HTML
-    const successMessage = `
-      <div id="popup" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #fff; padding: 20px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); text-align: center;">
-        <p>Imagen cargada con éxito</p>
-        <button onclick="closePopup()">Cerrar</button>
-      </div>
-      <script>
-        function closePopup() {
-          document.getElementById('popup').style.display = 'none';
-          // Redirige de nuevo a la página anterior
-          window.location.href = '/'; // Cambia esto al URL de tu página
-        }
-      </script>
-    `;
-    res.send(successMessage);
+    if (req.file) {
+      Swal.fire({
+        title: "Éxito",
+        text: "La imagen se ha cargado correctamente",
+        icon: "success",
+      });
+      res.redirect('/');
+    } else {
+      Swal.fire({
+        title: "Error",
+        text: "Hubo un problema al cargar la imagen",
+        icon: "error",
+      });
+      res.redirect('/');
+    }
   });
 
 
