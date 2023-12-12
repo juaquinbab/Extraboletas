@@ -1,3 +1,20 @@
-2023/12/10-06:40:06.430 3c7c Reusing MANIFEST C:\Users\Alba Fims\Desktop\BABYBOT\.wwebjs_auth\session-Client-one\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
-2023/12/10-06:40:06.430 3c7c Recovering log #148
-2023/12/10-06:40:06.545 3c7c Reusing old log C:\Users\Alba Fims\Desktop\BABYBOT\.wwebjs_auth\session-Client-one\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000148.log 
+2023/12/12-10:21:48.210 3098 Reusing MANIFEST C:\Users\Alba Fims\Desktop\BABYBOT\.wwebjs_auth\session-Client-one\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2023/12/12-10:21:48.214 3098 Recovering log #148
+2023/12/12-10:21:48.788 3098 Reusing old log C:\Users\Alba Fims\Desktop\BABYBOT\.wwebjs_auth\session-Client-one\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000148.log 
+2023/12/12-10:22:12.378 2c1c Level-0 table #157: started
+2023/12/12-10:22:12.427 2c1c Level-0 table #157: 1249133 bytes OK
+2023/12/12-10:22:12.432 2c1c Delete type=0 #148
+2023/12/12-10:22:12.448 2c1c Compacting 1@1 + 5@2 files
+2023/12/12-10:22:12.643 2c1c Generated table #158@1: 81685 keys, 2254488 bytes
+2023/12/12-10:22:12.709 2c1c Generated table #159@1: 5553 keys, 2147508 bytes
+2023/12/12-10:22:12.815 2c1c Generated table #160@1: 31462 keys, 2185344 bytes
+2023/12/12-10:22:13.106 2c1c Generated table #161@1: 106355 keys, 2258663 bytes
+2023/12/12-10:22:13.140 2c1c Generated table #162@1: 16840 keys, 359019 bytes
+2023/12/12-10:22:13.140 2c1c Compacted 1@1 + 5@2 files => 9205022 bytes
+2023/12/12-10:22:13.143 2c1c compacted to: files[ 0 0 6 0 0 0 0 ]
+2023/12/12-10:22:13.144 2c1c Delete type=2 #150
+2023/12/12-10:22:13.144 2c1c Delete type=2 #151
+2023/12/12-10:22:13.144 2c1c Delete type=2 #152
+2023/12/12-10:22:13.144 2c1c Delete type=2 #153
+2023/12/12-10:22:13.144 2c1c Delete type=2 #154
+2023/12/12-10:22:13.144 2c1c Delete type=2 #157
