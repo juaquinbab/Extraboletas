@@ -1,7 +1,7 @@
 body {
-  background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el fondo */
+  background-size: cover; /* Ajusta el tamaÃ±o de la imagen para cubrir todo el fondo */
   background-position: center center; /* Centra la imagen en el fondo */
-  background-attachment: fixed; /* Fija la imagen en su posición mientras se desplaza la página */
+  background-attachment: fixed; /* Fija la imagen en su posiciÃ³n mientras se desplaza la pÃ¡gina */
   /* Agrega la URL de la imagen que deseas utilizar como fondo */
   background-image: url("/media/sede-centro.jpg");
   
@@ -28,7 +28,7 @@ body {
 #borrar-registros-servidor,
 #resetButton,
 #show-upload-form {
-  margin: 10px; /* Añade un margen para evitar la superposición con la cabecera */
+  margin: 10px; /* AÃ±ade un margen para evitar la superposiciÃ³n con la cabecera */
 }
 /*.contact-form .btnContact {
  
@@ -52,9 +52,9 @@ body {
 #borrar-registros-servidor,
 #resetButton,
 #show-upload-form {
-  margin: 10px; /* Añade un margen para evitar la superposición con la cabecera */
+  margin: 10px; /* AÃ±ade un margen para evitar la superposiciÃ³n con la cabecera */
 }
-/* Estilos para la visualización */
+/* Estilos para la visualizaciÃ³n */
 
 
 /*
