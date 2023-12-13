@@ -24,10 +24,13 @@
 
   <nav class="navbar navbar-expand-lg bg-body-tertiary bg-opacity-25">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="/assets/logo.webp" alt="Bootstrap" width="30" height="24">
+      <a class="navbar-brand">
+        <img src="/media/logo.webp" alt="Bootstrap" width="30" height="24">
       </a>
-      <button >Plataforma</button>
+      <a href="/public/home.html">
+        <button >Plataforma</button>
+      </a>
+      
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -35,18 +38,25 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <button class="nav-link active" aria-current="page" href="/public/index.html">Mensajes masivos</button>
+            <a class="nav-link active" aria-current="page" href="/public/index.html">
+              <button>Mensajes masivos</button>
+            </a>
           </li>
           <li class="nav-item">
-            <button class="nav-link active" aria-current="page" href="/public/pedidos.html">Pedidos</button>
+            <a class="nav-link active" aria-current="page" href="/public/pedidos.html">
+            <button>Pedidos</button>
+          </a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Asistente
+            <a class="nav-link" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <button class="dropdown-toggle">Asistente</button>
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="https://wa.link/ljxoq3" target="__blank">Soporte</a></li>
-              <li><a class="dropdown-item" href="https://www.creativocode.com/" target="_blank">Acerca de nosotros </a>
+              <li><button class="dropdown-item" href="https://wa.link/ljxoq3" target="__blank">
+                Soporte</button></li>
+              <li><button class="dropdown-item" href="https://www.creativocode.com/" target="_blank">
+                Acerca de nosotros
+              </button>
               </li>
             </ul>
 
