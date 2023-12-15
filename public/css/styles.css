@@ -3,7 +3,7 @@ body {
   background-position: center center; /* Centra la imagen en el fondo */
   background-attachment: fixed; /* Fija la imagen en su posiciÃ³n mientras se desplaza la pÃ¡gina */
   /* Agrega la URL de la imagen que deseas utilizar como fondo */
-  background-image: url("/media/restaurante_prueba.jpg");
+  background-image: url("/public/restaurante_prueba.jpg");
   
   font-family: Arial, sans-serif;
 }

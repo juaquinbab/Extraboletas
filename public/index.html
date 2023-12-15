@@ -223,56 +223,51 @@
     // ////
 ////
 
-    // Obtener el formulario
-    //const form = document.querySelector('form');
-    //const mensajeEnviado = document.getElementById('mensaje-enviado');
-    document.addEventListener('DOMContentLoaded', function () {
-      const form = document.querySelector('form');
-      const mensajeEnviado = document.getElementById('mensaje-enviado');
-      // Al enviar el formulario
-      //form.addEventListener('submit', (event) => {
-      document.getElementById('submitButton').addEventListener('click', function () {
-        //event.preventDefault(); // Evitar que se envíe el formulario de inmediato
+   
+
+document.getElementById('submitButton').addEventListener('click', function () {
+
+const numbersValue = document.getElementById('numbers').value;
+const messagesValue = document.getElementById('messages').value;
+
+// Convertir los valores en arrays separados por comas sin agregar comillas
+const numbersArray1 = numbersValue.split(',').map(number => number.trim());
+const messagesArray2 = messagesValue.split(',').map(message => message.trim());
+
+// Enviar los datos al servidor
+fetch('/procesar', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({ numbers: numbersArray1, messages: messagesArray })
+})
+
+      .then(response => {
+        if (response.ok) {
+          mensajeEnviado.textContent = 'Mensaje enviado correctamente';
+          mensajeEnviado.style.color = 'green';
+          console.log('Datos enviados correctamente');
+          mostrarRegistros();
+        } else {
+          mensajeEnviado.textContent = 'Error al enviar el mensaje';
+          mensajeEnviado.style.color = 'red';
+          console.error('Error al enviar los datos');
+        }
+      })
+
+});
 
 
 
 
-        const numbersValue = document.getElementById('numbers').value;
-        const messagesValue = document.getElementById('messages').value;
 
-        // Convertir los valores en arrays separados por comas sin agregar comillas
-        const numbersArray = numbersValue.split(',').map(number => number.trim());
-        const messagesArray = messagesValue.split(',').map(message => message.trim());
 
-        // Enviar los datos al servidor
-        fetch('/procesar', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ numbers: numbersArray, messages: messagesArray })
-        })
 
-          .then(response => {
-            if (response.ok) {
-              mensajeEnviado.textContent = 'Mensaje enviado correctamente';
-              mensajeEnviado.style.color = 'green';
-              console.log('Datos enviados correctamente');
-              mostrarRegistros();
-            } else {
-              mensajeEnviado.textContent = 'Error al enviar el mensaje';
-              mensajeEnviado.style.color = 'red';
-              console.error('Error al enviar los datos');
-            }
-          })
 
-          .catch(error => {
-            mensajeEnviado.textContent = 'Error al enviar el mensaje';
-            mensajeEnviado.style.color = 'red';
-            console.error('Error:', error);
-          });
-      });
-    });
+
+
+    
 
     // Función para mostrar los registros de mensajes
     function mostrarRegistros() {
