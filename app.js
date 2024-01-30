@@ -106,7 +106,7 @@ switch (registro[message.from].etapa) {
       case 13:
         if (message.body === '1' ) {
           // Verificar si el mensaje tiene más de 2 letras
-          client.sendMessage(message.from, 'Puedas adquirir la boletería para los partidos del Deportivo Pereira por nuestra página web extraboletas.com \nCompra en línea boletas para eventos \n\nO en estas ubicaciones: 🗺️\n\n📍Centro Comercial Unicentro (Plazoleta Higuerón al lado de Dunkin’ Donuts, frente a Seven Seven. \n\n📍Estadio Hernán Ramirez Villegaz (Sector Occidental. \n\n📍Centro Comercial Victoria 💛❤️ SOLO PARA ABONADOS \n\nRecuerda que si eres extranjero debes adquirir tu boleta con el Pasaporte. \n\n ¿Desea alguna otra información? \n\n*SI* \n\n*NO*' );
+          client.sendMessage(message.from, 'Puedas adquirir la boletería para los partidos del Deportivo Pereira por nuestra página web extraboletas.com \nCompra en línea boletas para eventos \n\nO en estas ubicaciones: 🗺️\n\n📍Centro Comercial Unicentro. \n\n📍Estadio Hernán Ramirez Villegaz (Sector Occidental. \n\n📍Centro Comercial Victoria 💛❤️ SOLO PARA ABONADOS \n\nRecuerda que si eres extranjero debes adquirir tu boleta con el Pasaporte. \n\n ¿Desea alguna otra información? \n\n*SI* \n\n*NO*' );
           registro[message.from].etapa = 30;
           
         } else if (message.body === '2' ) {
