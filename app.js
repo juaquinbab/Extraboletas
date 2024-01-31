@@ -58,9 +58,9 @@ client.on('authenticated', (session) => {
 
 
 
-let MSGbien = null; // inicia el Mensaje de bienvenida
+let MSGbien = null; 
 let etapa = 0;
-const registro = {}; // Registra los numeros telefono que inician al programa
+const registro = {};
 
 let Nombre = '';
 
@@ -311,7 +311,7 @@ app.post('/procesar', (req, res) => {
 
 
   const sendMedia = (to, file) => {
-    const mediaFile = MessageMedia.fromFilePath(`./media/${file}`)
+    const mediaFile = MessageMedia.fromFilePath(`./public/media/${file}`)
     client.sendMessage(to, mediaFile)
   }
 
@@ -330,10 +330,6 @@ app.post('/procesar', (req, res) => {
 
 
 
-
-  setInterval(() => {
-    console.log("MSGenvio:", MSGenvio);
-  }, 1000);
   
   
   app.use(express.json());
